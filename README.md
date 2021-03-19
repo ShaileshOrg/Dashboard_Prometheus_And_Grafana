@@ -9,8 +9,9 @@ https://shailesh-bakadia.atlassian.net/wiki/spaces/SL/pages/59670529/Create+Dash
 3. App.Metrics.AspNetCore.Tracking
 4. App.Metrics.Formatters.Prometheus*/
 
-5. prometheus-net.AspNetCore - testing with latest version
-## Now add services.AddMetrics(); under ConfigureServices
+5. prometheus-net
+6. prometheus-net.AspNetCore 
+## Now add app.UseMetricServer(5000, "/metrics"); under Startup.cs > Configure method
 ## Run Prometheses server
 ## Run Grafan server
 ## visit http://localhost:9090 for prometheses log
