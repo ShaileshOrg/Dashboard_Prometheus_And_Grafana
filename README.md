@@ -16,3 +16,5 @@ https://shailesh-bakadia.atlassian.net/wiki/spaces/SL/pages/59670529/Create+Dash
 ## Run Grafan server
 ## visit http://localhost:9090 for prometheses log
 ## visit http://localhost:3000 for grafan server
+
+![image](https://user-images.githubusercontent.com/67036413/111725463-1ad8eb80-8835-11eb-9ed4-b5212adb3a95.png)
