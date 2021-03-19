@@ -18,6 +18,8 @@ namespace Dashboard_Prometheus_And_Grafana
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .UseMetricsWebTracking()                
+                .UseMetricsEndpoints()
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();

@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Dashboard_Prometheus_And_Grafana.Database;
+using Prometheus;
 
 namespace Dashboard_Prometheus_And_Grafana
 {
@@ -24,7 +26,10 @@ namespace Dashboard_Prometheus_And_Grafana
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.Configure<Kestrelserveroptions>
+            //services.AddMetrics();
             services.AddControllers();
+            services.AddSingleton<CustomerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -34,9 +39,10 @@ namespace Dashboard_Prometheus_And_Grafana
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            //setting metrix for promethous
+            app.UseMetricServer(5000, "/metrics");
             app.UseRouting();
-
+            
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
